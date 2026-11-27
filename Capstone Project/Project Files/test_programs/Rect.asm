@@ -1,0 +1,26 @@
+// Draws a 16-pixel-wide rectangle of height RAM[0] at the screen origin.
+@0
+D=M
+@n
+M=D
+@SCREEN
+D=A
+@addr
+M=D
+(LOOP)
+@n
+D=M
+@END
+D;JLE
+@addr
+A=M
+M=-1
+@addr
+M=M+1
+@n
+M=M-1
+@LOOP
+0;JMP
+(END)
+@END
+0;JMP
